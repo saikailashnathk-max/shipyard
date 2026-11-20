@@ -1,26 +1,194 @@
-@import "tailwindcss";
+/* app/globals.css */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.hero {
+  margin-bottom: 2.5rem;
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0369a1;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  color: #475569;
+  max-width: 600px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+  border-color: #0284c7;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.card-category {
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stock-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.in-stock {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.out-of-stock {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-tagline {
+  color: #475569;
+  font-size: 0.95rem;
+  flex-grow: 1;
+  margin-bottom: 1.25rem;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1rem;
+}
+
+.card-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.card-cta {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0284c7;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #0284c7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.detail-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 720px;
+}
+
+.detail-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.detail-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0369a1;
+  margin-bottom: 1.25rem;
+}
+
+.detail-description {
+  color: #334155;
+  margin-bottom: 2rem;
+}
+
+.specs-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.specs-list {
+  list-style-position: inside;
+  color: #475569;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.not-found {
+  text-align: center;
+  padding-top: 6rem;
+}
+
+.not-found h1 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.not-found p {
+  color: #475569;
+  margin-bottom: 1.5rem;
 }
